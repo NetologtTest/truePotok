@@ -43,6 +43,23 @@ public class PhoneBookTest {
         String result = phoneBook.findByNumber(name);
         assertEquals(number, result);
     }
+
+    @Test
+    public void findByNameTest() {
+        PhoneBook phoneBook = new PhoneBook();
+
+
+        String name = "Имя";
+        String number = "7777777";
+
+        phoneBook.add(name, number);
+        phoneBook.add(number, name);
+
+        String result = phoneBook.findByName(number);
+        assertEquals(name, result);
+    }
+
+
 }
 
 
