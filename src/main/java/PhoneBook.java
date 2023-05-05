@@ -15,7 +15,7 @@ public class PhoneBook {
         return count;
     }
 
-    public String findByNumber(String number) {
-        return null;
+    public String findByNumber(String name) {
+        return map.get(name);
     }
 }
