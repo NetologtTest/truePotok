@@ -6,7 +6,13 @@ public class PhoneBook {
     protected Map<String, String> map = new HashMap<>();
 
     public int add(String name, String number) {
-        return 0;
+        if (!map.containsKey(name) || !map.containsValue(number)) {
+
+            map.put(name, number);
+            count++;
+        }
+
+        return count;
     }
 
 }

@@ -24,13 +24,9 @@ public class PhoneBookTest {
         mapTest = phoneBook.map;
 
         assertThat(mapTest, IsMapContaining.hasEntry("Имя", "7777777"));
-
-
         assertEquals(1, countTest);
 
-        phoneBook.add(name, number);
-        mapTest = phoneBook.map;
-        assertThat(mapTest, not(IsMapContaining.hasEntry("Имя", "7777777")));
+
     }
 
 }
