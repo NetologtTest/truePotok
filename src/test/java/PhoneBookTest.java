@@ -29,6 +29,20 @@ public class PhoneBookTest {
 
     }
 
+    @Test
+    public void findByNumberTest() {
+        PhoneBook phoneBook = new PhoneBook();
+
+
+        String name = "Имя";
+        String number = "7777777";
+
+        phoneBook.add(name, number);
+        phoneBook.add(number, name);
+
+        String result = phoneBook.findByNumber(name);
+        assertEquals(number, result);
+    }
 }
 
 
