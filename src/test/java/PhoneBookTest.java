@@ -3,6 +3,7 @@ import org.hamcrest.collection.IsMapContaining;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.hamcrest.CoreMatchers.not;
@@ -52,14 +53,24 @@ public class PhoneBookTest {
         String name = "Имя";
         String number = "7777777";
 
-        phoneBook.add(name, number);
         phoneBook.add(number, name);
+        phoneBook.add(name, number);
 
         String result = phoneBook.findByName(number);
         assertEquals(name, result);
     }
 
+    @Test
+    public void printAllNames() {
+        PhoneBook phoneBook = new PhoneBook();
 
+        phoneBook.add("7777", "АААААА");
+        phoneBook.add("77777", "ББББББ");
+
+        List<String> list = phoneBook.printAllNames();
+        assertEquals(list.get(0), "АААААА");
+
+    }
 }
 
 
